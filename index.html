@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Tube</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.11/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <nav class="w-11/12 mx-auto flex items-center flex-wrap gap-2 sm:gap-5 px-2 justify-center sm:justify-between py-5 border-b">
+            <div class="logo w-full sm:w-auto">
+                <a href="/"><img src="./assets/logo.png" class="mx-auto" alt="Logo"></a>
+            </div>
+
+            <div class="search w-[190px] sm:w-auto grow">
+                <label class="input input-bordered flex items-center gap-2 my-1 text-sm text-[#171717B3]">
+                    <input id="searchQuery" type="text" class="grow" placeholder="Search" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      class="h-4 w-4 opacity-70">
+                      <path
+                        fill-rule="evenodd"
+                        d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                        clip-rule="evenodd" />
+                    </svg>
+                  </label>
+            </div>
+
+            <div class="button">
+                <button id="sortVideos" class="btn">SORT</button>
+            </div>
+        </nav>
+    </header>
+
+    <nav id="categories" class="flex justify-center gap-3 py-5 px-2"></nav>
+
+    <main class="max-w-md sm:max-w-screen-2xl md:w-11/12 mx-auto py-5 px-2">
+        <section id="videos" class="sm:grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+
+        </section>
+    </main>
+
+
+<!-- Modal starts -->
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <div>
+        <div id="thum-container" class="mb-5 relative">
+            <img id="video-thumb" class="w-full rounded-md">
+        </div>
+        <h4 id="modal-title" class="text-3xl font-bold"></h4>
+        <div class="flex gap-4 items-center my-3">
+            <img id="author-thumb" class="w-10 h-10 rounded-full object-cover">
+            <div class="text-[#171717e0] text-sm">
+                <div id="author-name-box" class="flex gap-2 items-center">
+                    <p id="author-name"></p>
+                </div>
+                <p><span id="video-views"></span> views</p>
+            </div>
+        </div>
+        <p id="desc"></p>
+    </div>
+
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn bg-yellow-300">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+<!-- Modal ends -->
+
+
+    <script src="./script/category.js"></script>
+    <script src="./script/video.js"></script>
+    <script src="./script/details.js"></script>
+</body>
+</html>
